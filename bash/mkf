@@ -1,0 +1,52 @@
+#########################################################################
+# Date: 2020年04月13日 星期一 17时21分55秒
+# File Name: fmt.sh
+# Author: rogerg6
+# Description: 用于创建文件，如*.c, *.sh, *.txt...
+#	           用法：mkf file1 file2 file3 ...
+#
+#	           生成的文件开头有如下格式，免得自己手动输入
+#	           ===========================================================>
+#			    Date: 2020年 04月 13日 星期一 19:20:24 CST
+#			    Author: rogerg6
+#			    File: t.txt
+#			    Description: 
+#			   ===========================================================>
+#########################################################################
+#!/bin/bash
+
+
+filenum=$#
+
+if [ ${filenum} == 0 ]; then
+	echo "Please enter filename"
+	exit 0
+fi
+
+for file in $*
+do
+	date=$(date +%Y%m%d)
+		
+	if [[ ${file} == *.c ]]; then
+		echo "/*************************************************************" >> ${file}
+		echo " Date: "$(date) >> ${file}
+		echo " Author: rogerg6" >> ${file}
+		echo " File: "${file} >> ${file}
+		echo " Description: " >> ${file}
+		echo "*************************************************************/" >> ${file}
+	elif [[ "${file}" == *.sh ]]; then
+		echo "###########################################################" >> ${file}
+		echo "# Date: "$(date) >> ${file}
+		echo "# Author: rogerg6" >> ${file}
+		echo "# File: "${file} >> ${file}
+		echo "# Description: " >> ${file}
+		echo "###########################################################" >> ${file}
+	else
+		echo "===========================================================>" >> ${file}
+		echo " Date: "$(date) >> ${file}
+		echo " Author: rogerg6" >> ${file}
+		echo " File: "${file} >> ${file}
+		echo " Description: " >> ${file}
+		echo "===========================================================>" >> ${file}
+	fi
+done
