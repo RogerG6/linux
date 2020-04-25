@@ -1,0 +1,40 @@
+===========================================================>
+ Date       : 2020年 04月 25日 星期六 19:46:06 CST
+ Author     : rogerg6
+ File       : ubuntu_sw
+ Description:
+ 	ubuntu下一些软件或系统方面的配置，备忘
+===========================================================>
+
+
+
+
+***********配置ftp服务****************
+1)安装vsftp:
+	sudo apt-get install vsftpd
+
+2)启动vsftp
+	sudo service vsftpd start
+
+3)创建FTP用户组ftp-users
+	groupadd ftp-users
+
+4)创建用户组目录ftp-docs
+	mkdir /home/ftp-docs
+
+5)修改权限
+	chmod -R 750 /home/ftp-docs
+	750组只能读不能写，要组能写，请改成770或760。
+
+6)指定文件夹归属用户和用户组
+	chown root:ftp-users /home/ftp-docs
+
+7)添加FTP用户并未他们设置缺省目录
+	useradd -g ftp-users -d /home/ftp-docs user
+	passwd user
+
+	user和passwd可以自己设定
+
+8)把vsftpd和创建的用户、目录做关联
+	sudo vi /etc/vsftpd.conf
+	修改配置文件，不可匿名访问，write_enable=YES
