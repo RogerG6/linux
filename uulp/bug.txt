@@ -1,0 +1,11 @@
+1. ls: ls -a ~		ok
+	原因：在读取并显示目录项信息之前就关闭了目录，导致以下问题:
+		---------------------------
+		roger@roger-E7250:~/work/uulp/ls$ ./myls -a ~ 
+		总文件数 29
+		/home/roger/nfig/ .gitconfig .gnupg/ .goldendict/ ndict: No such file or directory
+		/home/roger/im/ .viminfo .vimrc git/ scripts/ tools/ �6": No such file or directory
+		./ ../ .ICEauthority .bash_history .bash_logout .bashrc .cache/ .config/ .gitconfig .gnupg/ .goldendict/ .local/ .mozilla/ .profile .python_history .remarkable/ .ssh/ .sudo_as_admin_successful .vim/ .viminfo .vimrc git/ scripts/ tools/ 下载/ 图片/ 桌面/
+		---------------------------
+	解决方法： 将closedir()放在显示完目录项信息之后
+
