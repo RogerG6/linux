@@ -9,6 +9,9 @@
 	
 	7. aio_read : 异步读，用于非阻塞读取设备
 
+	8. dup/dup2 : 复制文件描述符 
+	9. pipe     : 创建一个管道
+
 ### 2. 目录
 	1. opendir
 	2. readdir : 读取目录项, struct dirent
@@ -70,8 +73,14 @@
 
 	4. execvp : 在指定路径中查找并执行一个文件
 	5. fork   : 创建进程
-	6. wait   : 等待进程结束
+	6. wait(&statusp)   : 等待进程结束, status是一个16bit的整数，其中：
+						  8~15 bit : exit(n)中的n，即退出值
+						  7    bit : core dump
+						  0~6  bit : signal number
+	7. exit
 
+### 11. environ
+	1. getenv : 获取环境变量的值
 
 
 

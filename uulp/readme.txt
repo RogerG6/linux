@@ -46,6 +46,9 @@ uulp/
 				smsh4 : 运行程序，name=val, if/then/fi, environment
 		11. fork
 		12. wait
+		13. redirect : 重定向
+				redir2file : 重定向到文件
+				pipe       : 管道，即进程重定向到进程
 
 	else/ 
 		1. char: 打印出ASCII表中的字符
