@@ -12,3 +12,5 @@
 
 2. pipe_cmds.c        ok
    pipe中的任意多参数的管道如何实现
+
+3. ./pipe/ppsort.c 无法排序输出
