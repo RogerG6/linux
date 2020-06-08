@@ -10,5 +10,5 @@
 	解决方法： 将closedir()放在显示完目录项信息之后
 
 
-2. pipe_cmds.c 
+2. pipe_cmds.c      ok
    pipe中的任意多参数的管道如何实现

@@ -12,6 +12,9 @@
 	8. dup/dup2 : 复制文件描述符 
 	9. pipe     : 创建一个管道
 
+	10. fdopen  : 将fd转换成FILE *
+	11. popen   : 打开一个指向进程的带缓冲的连接
+
 ### 2. 目录
 	1. opendir
 	2. readdir : 读取目录项, struct dirent
@@ -82,7 +85,21 @@
 ### 11. environ
 	1. getenv : 获取环境变量的值
 
+### 12. socket
+	1. server
+ 			1. 获取电话线				socket
+ 			2. 分配号码					bind
+ 			3. 允许接入调用				listen
+ 			4. 等待电话					accept
+ 			5. 传送数据					read/write
+ 			6. 挂断电话					close
 
+	2. client
+		 	1. 获取电话线				socket
+ 			2. 呼叫服务器				connect
+ 			3. 传送数据			 		read/write
+ 			4. 挂断电话					close
+		
 
 
 

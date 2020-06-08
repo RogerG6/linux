@@ -49,6 +49,9 @@ uulp/
 		13. redirect : 重定向
 				redir2file : 重定向到文件
 				pipe       : 管道，即进程重定向到进程
+		14. tinybc
+		15. popen
+		16. socket
 
 	else/ 
 		1. char: 打印出ASCII表中的字符
