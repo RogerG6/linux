@@ -106,15 +106,15 @@
            3. 传送数据			 		read/write
            4. 挂断电话					 close
 
-   2. UDP 数据报
+2. UDP 数据报
 
-         1. SERVER（接收端）
-               1. 获取电话线				socket
-               2. 分配号码					bind
-               3. 收包                            recvfrom
-         2. CLIENT（发送端）
-               1. 获取电话线				socket
-               2. 发包                            sendto
+      1. SERVER（接收端）
+            1. 获取电话线				socket
+            2. 分配号码					bind
+            3. 收包                            recvfrom
+      2. CLIENT（发送端）
+            1. 获取电话线				socket
+            2. 发包                            sendto
 
 
 

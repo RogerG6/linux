@@ -1,0 +1,59 @@
+# **这个文件夹主要存放学习Understand Unix/Linux Programming Bruce Molay的代码**
+
+- **<u>uulp/	(主目录中的是书中习题)</u>**
+  - more: 不能显示进度
+  - cat
+  - cp: 不能递归复制
+  - head
+  - tail
+  - ls
+  - who
+  - whoami
+  - chown
+  - chmod
+  - file: 不能像file输出一样
+  - chgrp
+  - mkdir -p
+  - mv
+  - stty
+    - echostat.c: 显示回显状态
+    - setecho.c :  设置回显状态
+    - showtty.c : 显示当前tty的一些属性 
+  - write: 不能显示当前终端的用户名
+  - passwd: 如何写入密码
+  - uppercase: 跟踪struct termios中o_flags中的OLCUC位的状态
+  - <u>**test/** **(书中例子)**</u>
+    - lseek
+    - onFileOneProcess
+    - winsize: 获得当前终端的尺寸
+    - demondir
+    - play_again : 关于终端驱动器的signal : 关于信号
+    - curses : 关于光标，移动，窗口显示
+      - bounce1d
+      - bounce2d
+      - hello1.c ~ hello5.c
+      - bounce_async.c
+      - bounce_aio.c
+    - timer  : 关于计时器，real, virtual, prof
+    - exec
+    - psh : 带提示符的shell
+      - smsh1
+      - smsh2 : 有if then fi的shell
+      - smsh3
+      - smsh4 : 运行程序，name=val, if/then/fi, environment
+    - fork
+    - wait
+      - redirect : 重定向redir2file : 重定向到文件
+      - pipe       : 管道，即进程重定向到进程
+    - tinybc
+    - popen
+    - socket
+    - webserv : web服务器
+    - datagram : 数据报编程　许可证服务器
+  - **<u>else/</u>**  
+    - char: 打印出ASCII表中的字符    
+    - ltm: 将rwxr-x--x 转换成 111101001    
+    - rd_nord_perm: 关闭读权限后能不能继续读文件
+
+
+
