@@ -3,15 +3,15 @@
 	2. read
 	3. write
 	4. close
-
+	
 	5. fcntl : 操纵文件描述符
 	6. ioctl : 控制设备
 	
 	7. aio_read : 异步读，用于非阻塞读取设备
-
+	
 	8. dup/dup2 : 复制文件描述符 
 	9. pipe     : 创建一个管道
-
+	
 	10. fdopen  : 将fd转换成FILE *
 	11. popen   : 打开一个指向进程的带缓冲的连接
 
@@ -32,11 +32,11 @@
 ### 5. 时间
 	1. time : 获得`time_t`的时间
 	2. ctime : 由`time_t`转换成固定字符串格式 
-
+	
 	/* 由time_t 转换成struct tm */
 	3. gmtime
 	4. localtime
-
+	
 	/* 由struct tm 转换成time_t */
 	5. astime
 	6. mktime
@@ -45,7 +45,7 @@
 	1. crypt : 加密
 	2. getpwent : get a password file entry
 	3. putpwent : write a password file entry
-	
+
 ### 7. 库
 #### 7.1 curse
 	1. initscr ： 初始化curses库和tty
@@ -68,12 +68,12 @@
 	3. sigprocmask  : 修改当前信号挡板
 	4. sigsetops       : 构造信号集
 	5. kill                    : 向一个进程发送信号
-	
+
 ### 10. 进程
 	1. pause : 挂起一个进程直到一个信号到达
 	2. sleep  : 挂起一个进程 n 秒
 	3. usleep : 挂起一个进程 n 微秒
-
+	
 	4. execvp : 在指定路径中查找并执行一个文件
 	5. fork   : 创建进程
 	6. wait(&statusp)   : 等待进程结束, status是一个16bit的整数，其中：
@@ -86,20 +86,35 @@
 	1. getenv : 获取环境变量的值
 
 ### 12. socket
-	1. server
- 			1. 获取电话线				socket
- 			2. 分配号码					bind
- 			3. 允许接入调用				listen
- 			4. 等待电话					accept
- 			5. 传送数据					read/write
- 			6. 挂断电话					close
+1. WEB / TCP 流socket
 
-	2. client
-		 	1. 获取电话线				socket
- 			2. 呼叫服务器				connect
- 			3. 传送数据			 		read/write
- 			4. 挂断电话					close
-		
+   1. SERVER 
+
+      1. 获取电话线				socket
+         2. 分配号码					bind
+         3. 允许接入调用			listen
+         4. 等待电话					accept
+         5. 传送数据					read/write
+         6. 挂断电话					close
+
+      
+
+   2. CLIENT
+
+        1. 获取电话线			 	socket
+           2. 呼叫服务器				 connect
+           3. 传送数据			 		read/write
+           4. 挂断电话					 close
+
+   2. UDP 数据报
+
+         1. SERVER（接收端）
+               1. 获取电话线				socket
+               2. 分配号码					bind
+               3. 收包                            recvfrom
+         2. CLIENT（发送端）
+               1. 获取电话线				socket
+               2. 发包                            sendto
 
 
 
