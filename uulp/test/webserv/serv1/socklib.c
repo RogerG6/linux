@@ -6,19 +6,9 @@
  	do : 封装服务端和客户端的socket步骤
 *************************************************************/
 
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <netdb.h>
-#include <time.h>
-#include <string.h>
+#include "socklib.h"
 
-#define HOSTLEN 256
-#define BACKLOG 1
-
-int make_server_socket_q(int, int);
+static int make_server_socket_q(int, int);
 
 int make_server_socket(int portnum)
 {
@@ -28,7 +18,7 @@ int make_server_socket(int portnum)
 /* purpose : Server : socket, bind, listen
  * returns : -1 for error, sock_id for ok
  */
-int make_server_socket_q(int portnum, int backlog)
+static int make_server_socket_q(int portnum, int backlog)
 {
 	struct sockaddr_in saddr;				// build our address here
 	struct hostent *hp;						
@@ -48,7 +38,7 @@ int make_server_socket_q(int portnum, int backlog)
 	bcopy((void *)hp->h_addr, (void *)&saddr.sin_addr, hp->h_length);			// fill in host part
 	saddr.sin_port = htons(portnum);			// fill in socket port
 	saddr.sin_family = AF_INET;					// fill in addr family
-	if (bind(sock_id, (struct sockaddr *)＆saddr, sizeof(saddr)) != 0)
+	if (bind(sock_id, (struct sockaddr *)&saddr, sizeof(saddr)) != 0)
 		return -1;
 
 	// 3. arrange for incoming calls
@@ -68,8 +58,8 @@ int connect_to_server(char *host, int portnum)
 	struct hostent *hp;				// used to get number
 
 	// 1. get a socket
-	sock_id = socket(PF_INET, SOCK_STREAM, 0);
-	if (sock_id == -1)
+	sock = socket(PF_INET, SOCK_STREAM, 0);
+	if (sock == -1)
 		return -1;
 
 	// 2. connect to server

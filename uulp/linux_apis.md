@@ -1,4 +1,5 @@
-### 1. IO
+# 1. IO
+
 	1. open
 	2. read
 	3. write
@@ -15,21 +16,25 @@
 	10. fdopen  : 将fd转换成FILE *
 	11. popen   : 打开一个指向进程的带缓冲的连接
 
-### 2. 目录
+# 2. 目录
+
 	1. opendir
 	2. readdir : 读取目录项, struct dirent
 	3. colsedir
 
-### 3. 文件
+# 3. 文件
+
 	1. stat : 获取文件信息, struct stat
 	2. utime : 修改文件的atime, mtime
 
-### 4. tty
+# 4. tty
+
 	1. tcgetattr : 获取终端控制信息, struct termios
 	2. tcsetattr : 设置终端控制信息
 	3. getttyent : 
 
-### 5. 时间
+# 5. 时间
+
 	1. time : 获得`time_t`的时间
 	2. ctime : 由`time_t`转换成固定字符串格式 
 	
@@ -41,13 +46,16 @@
 	5. astime
 	6. mktime
 
-### 6. 用户
+# 6. 用户
+
 	1. crypt : 加密
 	2. getpwent : get a password file entry
 	3. putpwent : write a password file entry
 
-### 7. 库
-#### 7.1 curse
+# 7. 库
+
+## 	7.1 curse
+
 	1. initscr ： 初始化curses库和tty
 	2. endwin ： 关闭 curses 并重置tty
 	3. refresh ： 刷新屏幕
@@ -57,19 +65,22 @@
 	7. standout ： 启动standout模式， 一般为反色
 	8. standend ：关闭standout模式 
 
-### 8. timer
+# 8. timer
+
 	1. getitimer : 取得间隔计时器
 	2. setitimer : 设置间隔计时器
 	3. alarm       : 设置一个闹钟
 
-### 9. signal
+# 9. signal
+
 	1. signal	    : Unix 中提供软件中断
 	2. sigaction	: POSIX 中替代signal
 	3. sigprocmask  : 修改当前信号挡板
 	4. sigsetops       : 构造信号集
 	5. kill                    : 向一个进程发送信号
 
-### 10. 进程
+# 10. 进程
+
 	1. pause : 挂起一个进程直到一个信号到达
 	2. sleep  : 挂起一个进程 n 秒
 	3. usleep : 挂起一个进程 n 微秒
@@ -82,10 +93,12 @@
 						  0~6  bit : signal number
 	7. exit
 
-### 11. environ
+# 11. environ
+
 	1. getenv : 获取环境变量的值
 
-### 12. socket
+# 12. socket
+
 1. WEB / TCP 流socket
 
    1. SERVER 
@@ -105,6 +118,8 @@
            2. 呼叫服务器				 connect
            3. 传送数据			 		read/write
            4. 挂断电话					 close
+
+   ----
 
 2. UDP 数据报
 
