@@ -52,6 +52,9 @@
     - datagram : 数据报编程
       - dgram1 : 发送
       - dgram2 ：发送，应答，接受
+    - lserv : 许可证服务器
+      - lserv1
+      - lserv2 : 增加了client和server崩溃处理
   - **<u>else/</u>**  
     - char: 打印出ASCII表中的字符    
     - ltm: 将rwxr-x--x 转换成 111101001    
