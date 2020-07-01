@@ -100,6 +100,14 @@
 
 # 12. socket
 
+**SOCKET的四种组合**
+
+|             |  域（Domain）  |              |
+| ----------- | :------------: | :----------: |
+| socket      |    PF_INET     |   PF_UNIX    |
+| SOCK_STREAM | 连接的，跨机器 | 连接的，本地 |
+| SOCK_DGRAM  | 数据报，跨机器 | 数据报，本地 |
+
 1. WEB / TCP 流socket
 
    1. SERVER 

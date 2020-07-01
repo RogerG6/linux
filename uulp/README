@@ -55,6 +55,7 @@
     - lserv : 许可证服务器
       - lserv1
       - lserv2 : 增加了client和server崩溃处理
+    - unix_domain : 用于本地通讯的unix domain日志服务器
   - **<u>else/</u>**  
     - char: 打印出ASCII表中的字符    
     - ltm: 将rwxr-x--x 转换成 111101001    
