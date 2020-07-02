@@ -140,6 +140,13 @@
             1. 获取电话线				socket
             2. 发包                            sendto
 
+# 13. 线程
+
+1. pthread_create : 创建一个新的线程
+2. pthread_join     ：等待某线程终止
+3. pthread_mutex_lock : 等待互斥锁解开后在锁住互斥量
+4. pthread_mutex_unlock : 给互斥量解锁
+
 
 
 

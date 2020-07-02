@@ -56,6 +56,9 @@
       - lserv1
       - lserv2 : 增加了client和server崩溃处理
     - unix_domain : 用于本地通讯的unix domain日志服务器
+    - thread : 线程
+      - hello_multi : 双线程打印hello world
+      - count : 双线程统计2个文件的总字数
   - **<u>else/</u>**  
     - char: 打印出ASCII表中的字符    
     - ltm: 将rwxr-x--x 转换成 111101001    
