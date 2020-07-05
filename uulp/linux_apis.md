@@ -143,9 +143,25 @@
 # 13. 线程
 
 1. pthread_create : 创建一个新的线程
+
 2. pthread_join     ：等待某线程终止
+
 3. pthread_mutex_lock : 等待互斥锁解开后在锁住互斥量
+
 4. pthread_mutex_unlock : 给互斥量解锁
+
+5. pthread_cond_wait : 使线程挂起，等待某条件变量的信号
+
+   ```
+   内部实现（猜测）：
+           1. release lock
+           2. suspend to wait for cond
+           3. wake up by cond
+           4. get lock
+   具体代码参考github：linux/uulp/test/thread/count/twocount4.c
+   ```
+
+6. pthread_cond_signal ：唤醒一个正在等待的线程, 被唤醒的线程从pthread_cond_wait中苏醒，继续pthread_cond_wait中的代码
 
 
 

@@ -14,3 +14,4 @@
    pipe中的任意多参数的管道如何实现
 
 3. ./pipe/ppsort.c 无法排序输出
+4. ./test/thread/count/twocount4.c　中条件变量的流程不清楚

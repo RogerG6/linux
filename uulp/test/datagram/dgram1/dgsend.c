@@ -28,7 +28,7 @@ int main(int ac, char *av[])
 
 	if (ac != 4) {
 		fprintf(stderr, " usage		: dgsend hostname portnum message\n");
-		exit(1);
+		exit(1); 
 	}
 
 	msg = av[3];
